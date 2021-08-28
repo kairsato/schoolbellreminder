@@ -6,3 +6,5 @@ A chrome extension that help school life easier. It tracks your subjects, homewo
 Link to extension: https://chrome.google.com/webstore/detail/school-bell-reminder/emealmaijpbafmppjckifilmacnapfii
 
 Rebuild edition for assignment: https://chrome.google.com/webstore/detail/school-assistant/gbhhalecfiaaeikchapmfgpnkkkjlffp 
+
+Haven't really touched it in a long time, all the code was made during Highschool.
