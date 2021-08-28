@@ -1,0 +1,36 @@
+
+{
+  
+  "manifest_version": 2,
+  "name": "School Bell Reminder",
+  "short_name": "SCB",
+  "description": "The School Bell Reminder is a chrome extension that is able to tell and warn users of the users next period.",
+ "background": {
+    "scripts": ["/Main_System/Backgroundscripts/systemchangelistener.js","/Main_System/Backgroundscripts/notification.js","/Main_System/Backgroundscripts/timescriptupdater.js"]
+  },
+  "version": "14.2.11",
+  "minimum_chrome_version": "38",
+
+  "icons": {
+    
+    "128": "/Resources/Images/School_Bell_Reminder_Logo.png"
+  },
+
+"permissions": ["identity", "https://accounts.google.com/*", "https://www.googleapis.com/*","storage","alarms", "notifications","background"],
+ "offline_enabled": true,
+ "omnibox": { "keyword" : "sbr" },
+
+"browser_action": {
+  
+    "default_icon": "/Resources/Images/School_Bell_Reminder_Logo.png",
+    "default_title": "School Bell Reminder",
+    "default_popup": "/Startup_Setup/Basic_Info/basic_info.html"
+  },
+
+  "oauth2": {
+   
+    "client_id": "856897471670-etpomk2ibjn4kar68ahasce6uj9lo85c.apps.googleusercontent.com",
+    "scopes": ["https://www.googleapis.com/auth/drive"]
+  }
+  
+}

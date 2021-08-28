@@ -1,0 +1,33 @@
+/* Copyright 2016, Kai Sato, All rights reserved. */
+html
+{
+  width: 515px;
+}
+#return
+{
+      height: 30px;
+    width: 113px;
+}
+.header
+{
+  text-align: center;
+}
+.title
+{
+  text-align:center;
+  margin:0px;
+  margin-right: 80px;
+  display:inline-block;
+}
+.return
+{
+  display:inline-block;
+  float:left;
+  height: 30px;
+  width: 113px;
+  font-weight: bold;
+}
+.remove
+{
+  float:right;
+}

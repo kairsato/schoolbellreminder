@@ -1,0 +1,63 @@
+/* Copyright 2016, Kai Sato, All rights reserved. */
+#whole{
+  min-width:300px
+}
+.left{
+  min-width:65px;
+      font-weight: bold;
+  text-align:center ;
+}
+table{
+      padding-top: 12px;
+}
+.sub
+{
+  font-weight:bold;
+  text-align: center;
+    min-width: 85px;
+    
+}
+#dropdown
+{
+      width: 106px;
+    float: right;
+    margin-right: 19px;
+    display: inline-block;
+}
+.header
+{
+  text-align: center;
+}
+.title
+{
+  text-align:center;
+  margin:0px;
+  display:inline-block;
+}
+input
+{
+  text-align:center;
+  width: 85px;
+  height: 18px;
+  font-size: 12px;
+}
+.width
+{
+      width: 70px;
+      margin: 0;
+      
+}
+.day
+{
+  text-align:center;
+   width: 85px;
+      margin: 0;
+}
+.return
+{
+  display:inline-block;
+  float:left;
+  height: 30px;
+  width: 113px;
+  font-weight: bold;
+}

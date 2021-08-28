@@ -1,0 +1,71 @@
+html{
+  width:500px;
+  height:450px;
+}
+.right2
+{
+  float:right;
+  text-align:center;
+  width:50%;
+}
+.smalltitle
+{
+  font-size:15px;
+ 
+}
+.left2
+{
+  float:left;
+  text-align:center;
+  width:50%;
+}
+.line{
+  width:95%;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  border:1px solid black;
+  margin-top:5px;
+}
+.center
+{
+      margin-left: auto;
+    margin-right: auto;
+}
+.title{
+  font-weight: bold;
+    font-size: 15px;
+}
+
+td{
+  width: 33%;
+  text-align:center;
+}
+.left{
+  float:left;
+  text-align:center;
+}
+.right{
+  float:right;
+  text-align:center;
+}
+.nomargin{
+      margin-top: 0px;
+    margin-bottom: 0px;
+}
+button
+{
+  border-radius: 5px;
+}
+select{
+  border-radius: 14px;
+}
+.top{
+      width: 100%;
+    height: 50px;
+}
+.time{
+  text-align:center;
+      height: 100px;
+       margin-top: 15px;
+}

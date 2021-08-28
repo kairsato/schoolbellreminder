@@ -1,0 +1,60 @@
+<!-- aCopyright 2016, Kai Sato, All rights reserved. -->
+<!DOCTYPE html>
+<html id="whole" style=" width: 600px;">
+  <head>
+    <script type="text/Javascript" src="sync.js"></script>
+    <link type="text/css" rel="stylesheet" href="sync.css"/>
+  </head>
+   <body id="body" style="width: 600px;">
+   <div class="whole">
+    <div class="header">
+      <h1 class="title">Sync</h1>
+      <button class="return" id="return">Return</button>
+      
+    </div>
+<p class="status"><span class="bold">Status:</span><marquee scrolldelay="125" id="status" direction="left" style="margin-bottom: -3px;width:400px;margin-left: 10px;font-size: 15px;">All current syncing system are idle and awaiting futher instructions.</marquee></p>
+<div>
+  <fieldset>
+    <legend><h3 style="text-decoration:underline">Online method (Recommended)</h3></legend>
+  
+  <div style="    float: right;">
+    <h4 class="inline">Download:</h4>
+    <button class="inline">All data</button>
+    <button class="inline">Subjects</button>
+    <button class="inline">Bell Times</button>
+    <button class="inline">Quick actions</button>
+    <button class="inline">Assignments</button>
+    <button class="inline">Homework</button>
+  </div>
+  <div style="    float: right;">
+    <h4 class="inline">Upload:</h4>
+    <button class="inline" id="salldata">All data</button>
+    <button class="inline" id="ssubjects">Subjects</button>
+    <button class="inline" id="sbelltimes">Bell Times</button>
+    <button class="inline">Quick actions</button>
+    <button class="inline" id="sassignments">Assignments</button>
+    <button class="inline" id="shomework">Homework</button>
+  </div>
+  </fieldset>
+</div>
+<div>
+  <fieldset>
+    <legend><h3 style="text-decoration:underline">Offline method</h3></legend>
+  
+  <div style="    float: right;">
+    <h4 class="inline">Download:</h4>
+    <button class="inline" id="oalldata">All data</button>
+    <button class="inline" id="osubjects">Subjects</button>
+    <button class="inline" id="obelltimes">Bell Times</button>
+    <button class="inline" id="oassignments">Assignments</button>
+    <button class="inline" id="ohomework">Homework</button>
+  </div>
+  <div style="    float: left;    margin-left: 32px;">
+    <h4 class="inline">Upload:</h4>
+    <input type="file" id="fileinput" class="inline" style="width:200px">
+    <button class="inline" style="width: 183px;">Intergrate Uploaded data</button>
+  </div>
+  </fieldset>
+</div>
+  </body>
+</html>

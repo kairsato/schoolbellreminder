@@ -1,0 +1,191 @@
+/* Copyright 2016, Kai Sato, All rights reserved. */
+html
+{
+ width:415px;
+      min-height: 350px;
+}
+ul
+{
+  margin: 0px;
+    padding-left: 20px;
+}
+fieldset
+{
+  
+      min-height: 150px;
+ 
+}
+.width
+{
+  width:55%;
+}
+#bar
+{
+     position: fixed;
+  bottom:0px;
+  width:100%;
+  background-color:rgb(146, 239, 40);;
+  z-index: -1;
+  left: 0px;
+}
+.back
+{
+  opacity:0;
+  animation:next 3s forwards;
+  animation-delay: 2s;
+      margin-top: 24px;
+    float: left;
+    width: 100px;
+    height: 33px;
+    font-size: 17px;
+}
+.nonbold
+{
+  font-weight:normal;
+
+}
+h3
+{
+  margin:0;
+}
+.header
+{
+  text-align:center;
+  width:100%;
+  height:50px;
+  font-size:20px;
+  
+}
+td
+{
+  
+}
+.next
+{
+  opacity:0;
+   
+ 
+      margin-top: 24px;
+    float: right;
+    width: 100px;
+    height: 33px;
+    font-size: 17px;
+}
+
+legend
+{
+  text-align:left; 
+  font-size:15px;
+  font-weight:bold;
+}
+#title
+{
+  visibility: hidden;
+  margin-top:0px;
+  animation: myfirst 2s forwards;
+  animation-delay: 0.5s;
+  
+}
+
+
+#lines
+{
+  opacity:0;
+  animation:right 1s forwards;
+  animation-delay:1s;
+}
+/* animation right*/
+
+@-webkit-keyframes right
+{
+  from{opacity:1;margin-right:-800px;}
+  to{opacity:1;margin-right:0px;}
+}
+#appear
+{
+  opacity:0;
+  animation:opacity 4s forwards;
+  animation-delay:1s;
+}
+/* animation opacity*/
+
+@-webkit-keyframes opacity
+{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+#school
+{
+  opacity:0;
+  animation:school 1s forwards;
+  animation-delay:1s;
+}
+/* animation school*/
+
+@-webkit-keyframes school
+{
+  from{opacity:1;margin-left:-800px;}
+  to{opacity:1;margin-left:0}
+}
+/* animation fieldset*/
+
+@-webkit-keyframes fieldset
+{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+{
+  margin-top:0px;
+  font-size: 20px;
+      margin-bottom: 15px;
+}
+fieldset
+{
+}
+/*  animation next */
+@-webkit-keyframes next
+{
+  from{opacity:0;}
+  to{opacity:1; }
+}
+/*  animation bounce */
+
+@-webkit-keyframes myfirst
+{
+  from, 20%, 53%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+  0% {
+    visibility: visible;
+     -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    -webkit-transform: translate3d(0, -80px, 0);
+    transform: translate3d(0, -10080px, 0);
+  }
+
+  40%{
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0,-4px,0);
+    transform: translate3d(0,-4px,0);
+  }
+  100%
+  {
+    visibility: visible;
+  }
+}

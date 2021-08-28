@@ -1,0 +1,126 @@
+<!-- Copyright 2016, Kai Sato, All rights reserved. -->
+<!DOCTYPE html>
+<html id="whole">
+  <head>
+    <title>Timetable Info</title>
+    <script type="text/Javascript" src="timetable_info.js"></script>
+    <link type="text/css" rel="stylesheet" href="timetable_info.css"/>
+  </head>
+  <body>
+    <div class="header">
+      <h1 id="title">Setup</h1>
+    </div>
+    <fieldset style="    background: rgba(94, 173, 236, 0.15);
+    border-color: rgb(94, 173, 236);" class="fieldset">
+      <legend>Timetable Info</legend>
+       <div class="description">
+      <span>
+        Timetable Info acquires knowledge about the users timetable, to fit their specific requirements. For example, A week cycle contains two timelines alterating between each week.   
+      </span>
+    </div>
+      <div id="school" style="text-align:center;height: 190px;">
+        <div class="preset" style="height: 100px;">
+          <table id="first" border="0">
+           
+            <tr>
+              <td  style="float:left"><b>Presets timelines:</b></td>
+              <td id="same"><button id="2week">2 Week Cycle</button></td>
+              <td id="same"><button id="6day">6 Day Cycle</button></td>
+              <td id="same"><button id="nochange">No changes</button></td>
+              
+            </tr>
+            <tr>
+              <td></td>
+              <td><span>Alters timeline to timeline from Monday to Friday with 6 periods</span></td>
+              <td><span>A six day cycle changing between 6 different days within Monday to Friday with 7 periods</span></td>
+              <td><span>Doesn't changes within the any time period between Monday to Friday with 6 periods</span></td>
+            </tr>
+            <tr>
+              <td style="float:left;margin-bottom:20px"><b>Editor:</b></td>
+            </tr>
+          </table>
+      
+         
+         
+         <div></div>
+                 
+                </div>
+        <div class="select">
+          <h4 class="inline" style="margin-right:10px">Select Timeline: </h4>
+          <select id="dropdown"class="inline" style="width: 75px;">
+            
+          </select>
+        </div>
+        <div class="edit">
+          <h4 class="inline" style="margin-right:10px">Timeline name: </h4>
+          <input type="text" id="name" class="name">
+          <button id="remove" class="inline">Remove</button>
+          <button id="add" class="inline">Add New</button>
+        </div>
+        <div style="width: 100%;height: 50px;">
+          <div style="float:left">
+            <h4 style="margin-top:15px">Day Selector: </h4>
+          </div>
+       <table id="second">
+         <tr>
+           <td>
+             <input type="checkbox" name="dayselect" id="Mon" value="Monday">
+           </td>
+           <td>
+             <input type="checkbox" name="dayselect" id="Tue" value="Tuesday">
+           </td>
+           <td>
+             <input type="checkbox" name="dayselect" id="Wed" value="Wednesday">
+           </td>
+           <td>
+             <input type="checkbox" name="dayselect" id="Thu" value="Thursday">
+           </td>
+           <td>
+             <input type="checkbox" name="dayselect" id="Fri" value="Friday">
+           </td>
+           <td>
+             <input type="checkbox" name="dayselect" id="Sat" value="Saturday">
+           </td>
+           <td>
+             <input type="checkbox" name="dayselect" id="Sun" value="Sunday">
+           </td>
+         </tr>
+         <tr>
+           <td>
+             <span>Monday</span>
+           </td>
+           <td>
+             <span>Tuesday</span>
+           </td>
+           <td>
+             <span>Wednesday</span>
+           </td>
+           <td>
+             <span>Thursday</span>
+           </td>
+           <td>
+             <span>Friday</span>
+           </td>
+           <td>
+             <span>Saturday</span>
+           </td>
+           <td>
+             <span>Sunday</span>
+           </td>
+         </tr>
+       </table>
+       </div>
+        </div>
+      <div id="lines" style="margin-top:10px;text-align: left;">
+        <b style="display:inline-block;margin-right:20px">Number of periods:</b>
+         <input type="number" style="display:inline-block;font-size: 17px;width: 35px;" id="periods" min="1" max="16">
+      </div>
+    </fieldset>
+   
+    </div>
+    <div>
+      <button class="back" id="back">Back</button>
+      <button class="next" id="next">Next</button>
+    </div>
+  </body>
+</html>

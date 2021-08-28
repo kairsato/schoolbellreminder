@@ -1,0 +1,110 @@
+<!-- Copyright 2016, Kai Sato, All rights reserved. -->
+<!DOCTYPE html>
+<html id="whole">
+  <head>
+    <link type="text/css" rel="stylesheet" href="homepagena.css"/>
+    <script type="text/Javascript" src="/Main_System/Homepage/homepage.js"></script>
+   </head>
+  <body id="body">
+  
+    <div class="header">
+      <h1 class="nomargin">School Bell Reminder</h1>
+    </div> 
+    <div class="body">
+      <div class="left">
+        <p style="" class="nomargin">Current Time: <span id="time" class="nobold">00:00:00</span></p>
+        <p style="animation-delay:0.4s;" class="nomargin">Current Date: <span id="date" class="nobold">4 October</span></p>
+        <p style="animation-delay:0.8s;" class="nomargin">Current Day: <span id="today" class="nobold">Sunday</span></p>
+        <div style="animation-delay:1.2s;;">
+        <div style="display:inline-block" class="display">Status:</div>
+        <div style="display:inline-block" class="what"><button  id="enable"  class="display">Enable</button></div>
+        <div style="display:inline-block" class="what"><button id="disable"  class="display">Disable</button></div>
+        </div>
+      </div>
+      <div class="right">
+        <div style="" class="float">
+         <button id="subject" class="small">Subject</button>
+         <button id="belltimes" class="small">Bell Times</button>
+         <button id="assignment"class="small">Assignments</button>
+        </div>
+        <div style="animation-delay:0.6s;"class="float">
+         <button id="homework" class="small">Homework</button></a>
+         <button id="sync" class="small">Sync</button>
+         <button id="tutorial" class="small">Settings</button>
+        </div>
+        <div style="animation-delay:1.2s;" class="float">
+         <button id="about" class="small">About</button>
+          <button id="bugs" class="small">Report Bugs</button>
+          <button id="rate" class="small">Rate Extension</button>
+        </div>
+        <div id="2week"></div>
+        <div id="whole">
+         <div id="div1"><span class="size" class="display">Cycle:</span>
+        <form action="" class="display">
+        <select name="cars" id="dropdown" class="bigger">
+        </select>
+      </form>
+     </div>
+      </div>
+      </div>
+    <div class="comingup">
+      <fieldset style=" animation-delay:1.5s; ">
+        <legend class="center9">Coming up</legend>
+      <table border="0" align="left" class="table">
+        <tr >
+          <td style="animation:size 0.5s forwards; animation-delay:2.5s; ;font-weight:bold;width: 130px;" >Period:</td>
+          
+          <td style="animation:size 0.5s forwards; animation-delay:2.7s; ;font-weight:bold" class="bold" id="period1">1</td>
+          
+          <td style="animation:size 0.5s forwards; animation-delay:2.9s; ;font-weight:bold"class="bold" id="period2">2</td>
+          
+          <td style="animation:size 0.5s forwards; animation-delay:3.1s; ;font-weight:bold"class="bold" id="period3">3</td>
+        </tr>
+        <tr>
+          <td style="width:116px;animation:size 0.5s forwards; animation-delay:2.7s; ;font-weight:bold" >Subjects:</td>
+          
+          <td style="animation:size 0.5s forwards; animation-delay:3.3s; " id="subject1">none</td>
+          
+          <td style="animation:size 0.5s forwards; animation-delay:3.4s; "id="subject2">none</td>
+          
+          <td style="animation:size 0.5s forwards; animation-delay:3.5s; "id="subject3">none</td>
+        </tr>
+        <tr>
+          <td style="animation:size 0.5s forwards; animation-delay:2.9s; ;font-weight:bold">Location:</td>
+          
+          <td style="animation:size 0.5s forwards; animation-delay:3.3s; " id="room1">none</td>
+          
+          <td style="animation:size 0.5s forwards; animation-delay:3.4s; "id="room2">none</td>
+          
+          <td style="animation:size 0.5s forwards; animation-delay:3.5s; "id="room3">none</td>
+        </tr>
+        <tr>
+          <td style="animation:size 0.5s forwards; animation-delay:3.1s; ;font-weight:bold">Time Remain:</td>
+          
+          <td style="animation:size 0.5s forwards; animation-delay:3.3s; " id="time1">00:00:00</td>
+          
+          <td style="animation:size 0.5s forwards; animation-delay:3.4s; "id="time2">00:00:00</td>
+          
+          <td style="animation:size 0.5s forwards; animation-delay:3.5s; "id="time3">00:00:00</td>
+        </tr>
+      </table>
+      </fieldset>
+    </div>    
+    <div>
+      <div  class="left2">
+        <h1 style="animation-delay:3s; " class="smalltitle">Upcoming Assignments</h1>
+        <table style="animation-delay:3.2s; ;width:100%"  id="addassignment" border="0" class="center">
+         
+        
+        </table>
+      </div>
+      <div class="right2">
+        <h1 style=" animation-delay:3s; " class="smalltitle">Upcoming Homework</h1>
+        <table style=" animation-delay:3.2s; ;width:100%"   border="0" id="addhomework"class="center">
+          
+        </table>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

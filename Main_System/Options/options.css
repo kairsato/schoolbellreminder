@@ -1,0 +1,27 @@
+/* Copyright 2016, Kai Sato, All rights reserved. */
+html
+{
+  width:388px;
+  height:150px;
+}
+
+.button
+{
+  width:150px;
+}
+
+.small
+{
+  width:100px;
+  height:30px;
+  font-size:12px;
+}
+
+.right
+{
+  
+  text-align:center;
+}
+button{
+   border-radius: 5px;
+}

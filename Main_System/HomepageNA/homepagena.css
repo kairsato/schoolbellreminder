@@ -1,0 +1,163 @@
+/* Copyright 2016, Kai Sato, All rights reserved. */
+html
+{
+  width:588px;
+  height:450px;
+}
+#div1
+{
+
+}
+.nobold
+{
+  font-weight:normal;
+}
+.center
+{
+      margin-left: auto;
+    margin-right: auto;
+}
+.smalltitle
+{
+  font-size:15px;
+ 
+}
+.right2
+{
+  float:right;
+  text-align:center;
+  width:50%;
+}
+.left2
+{
+  float:left;
+  text-align:center;
+  width:50%;
+}
+.table
+{
+  text-align: center;
+    font-size: 18px;
+}
+.invisible
+{
+  visibility: hidden;
+}
+.padding
+{
+  padding-right:116px;
+}
+.bold
+{
+  width:150px;
+}
+.center9
+{
+  font-weight:bold;
+  text-align:center;
+  font-size:20px;
+}
+.comingup
+{
+  clear: both;
+}
+.bigger
+{
+      width: 100px;
+    font-size: 15px;
+}
+.what
+{
+  width:70px;
+}
+.button
+{
+  width:150px;
+}
+.size
+{
+  font-size:20px;
+  font-weight:bold;
+}
+.display
+{
+  display:inline-block;
+  margin-top:0px;
+  margin-bottom:0px;
+  white-space: nowrap;
+}
+
+.small
+{
+  width:100px;
+  height:30px;
+  font-size:12px;
+}
+.big
+{
+  width:45.5%;
+  height:30px;
+  font-size:12px;
+}
+.left
+{
+  float:left;
+  width:40%;
+      line-height: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    font-size: 19px;
+    margin-top: 0px;
+}
+.right
+{
+  width:60%;
+  float:right;
+  text-align:center;
+}
+.nomargin
+{
+  margin-top:0px;
+  margin-bottom:0px;
+  white-space: nowrap;
+  
+}
+.title
+{
+  font-weight:bold;
+}
+.header
+{
+  
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  font-weight:bold;
+
+ 
+  
+}
+.box1
+{
+  background-color:rgb(164, 234, 255);
+  height:100%;
+  width:8%;
+  position:fixed;
+  right:0px;
+  left:0px;
+  top:0px;
+  display:inline;
+ 
+}
+.box2
+{
+  background-color:rgb(164, 234, 255);
+  height:100%;
+  width:8%;
+  position:fixed;
+  right:0px;
+  left:92%;
+  top:0px;
+  display:inline;
+
+}
