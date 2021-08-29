@@ -16,6 +16,17 @@ html
 {
   display:block;
 }
+.back
+{
+  opacity:0;
+  animation:next 3s forwards;
+  animation-delay: 2s;
+      margin-top: 24px;
+    float: left;
+    width: 100px;
+    height: 33px;
+    font-size: 17px;
+}
 @-webkit-keyframes gray
 {
   
@@ -104,7 +115,7 @@ td
    
   animation:next 3s forwards;
   animation-delay: 2s;
-      margin-top: 24px;
+      margin-top: 17px;
     float: right;
     width: 100px;
     height: 33px;
@@ -127,12 +138,7 @@ legend
 }
 
 
-#lines
-{
-  opacity:0;
-  animation:right 1s forwards;
-  animation-delay:1s;
-}
+
 /* animation right*/
 
 @-webkit-keyframes right
@@ -140,66 +146,21 @@ legend
   from{opacity:1;margin-right:-800px;}
   to{opacity:1;margin-right:0px;}
 }
-#appear
-{
-  opacity:0;
-  animation:opacity 4s forwards;
-  animation-delay:1s;
-}
-/* animation opacity*/
+
 
 @-webkit-keyframes opacity
 {
   from{opacity:0;}
   to{opacity:1;}
 }
-#school
-{
-  opacity:0;
-  animation:school 1s forwards;
-  animation-delay:1s;
-  
-    height: 45px;
 
-}
-/* animation school*/
-
-@-webkit-keyframes school
-{
-  from{opacity:1;margin-left:-800px;}
-  to{opacity:1;margin-left:0}
-}
-.left
-{
-  
-  margin:0px;
-}
-/* animation fieldset*/
-
-@-webkit-keyframes fieldset
-{
-  from{opacity:0;}
-  to{opacity:1;}
-}
-{
-  margin-top:0px;
-  font-size: 20px;
-      margin-bottom: 15px;
-}
-fieldset
-{
-  opacity:0;
-  min-height:156px;
- animation:gray 7s forwards;
-  animation-delay: 0s;
-   transition-timing-function: ease-out;
-}
-/*  animation next */
 @-webkit-keyframes next
 {
   from{opacity:0;}
   to{opacity:1; }
 }
+
+
 /*  animation bounce */
 
 @-webkit-keyframes myfirst

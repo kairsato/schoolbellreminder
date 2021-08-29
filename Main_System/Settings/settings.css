@@ -16,6 +16,9 @@ html
  
   
 }
+body{
+  height: 126px;
+}
 .center
 {
   text-align:center;

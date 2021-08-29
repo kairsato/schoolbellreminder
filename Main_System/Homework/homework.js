@@ -1,122 +1,75 @@
 //Copyright 2016, Kai Sato, All rights reserved.
 document.addEventListener('DOMContentLoaded', function () 
 {
- //defaults for counter
-if(localStorage["homeworkcounter"] === undefined || localStorage["homeworkcounter"] === "undefined" || localStorage["homeworkcounter"] === "")
+  //button done
+  //document.getElementById("assignment1").addEventListener("click",function()
+  //{
+    //document.getElementById("")
+  //});
+  //automatically generates first homework table
+  document.getElementById("table").insertAdjacentHTML('beforeEnd',"  <tr><td><b>Homework 1</b></td><td><div style='visibility: hidden'>w</div></td><td>Subjects:</td><td><input type = 'text' size = '5' id = '"+"h"+"subject"+"1"+"'></td><td>Due Date:</td><td><input type = 'date' size ='4' id = '"+"h"+"date"+"1"+"'></td></tr><tr><td style='float: left;'></td><td></td><td>Notes:</td><th colspan='4'><textarea rows = '4' cols = '30' id = '"+"h"+"notes"+"1"+"' style='width: 100%;'></textarea></th></tr>");
+if(localStorage["homeworkcounter"] === undefined)
 {
   localStorage["homeworkcounter"] = 1;
 }
-
-
-
-function createtable(){
-  var homework = localStorage["homework"].split("|*splitwhole*|");
-   var subjects = localStorage["subjects"].split(",");
-  for(var a = 0; a < parseInt(homework[0]); a += 1){
-   document.getElementById("table").insertAdjacentHTML('beforeEnd',"  <tr id="+(a+1)+"><td style='width:75px'><b>Homework "+(a+1)+"</b></td><td>Subjects:</td><td><select id = '"+"h"+"subject"+(a+1)+"'></select></td><td>Due Date:</td><td><input type = 'date' size ='4' id = '"+"h"+"date"+(a+1)+"'></td></tr><tr id="+(a+1)+"n"+"><td></td><td>Notes:</td><th colspan='4'><textarea rows = '4' cols = '30' id = '"+"h"+"notes"+(a+1)+"' style='width: 100%;'></textarea></th></tr>");
-   var items;
-    for(items in subjects){
-      console.log(subjects[items]);
-     document.getElementById("h"+"subject"+(a+1)).insertAdjacentHTML('beforeEnd',"<option>"+subjects[items]+"</option>");
-     
-    }
-    document.getElementById("h"+"subject"+(a+1)).selectedIndex = 1;
-  }
+//load previous added homework
+for(var a = 2; a <= localStorage["homeworkcounter"]; a = a + 1)
+{
   
-   
-  }
-  createtable();
+  document.getElementById("table").insertAdjacentHTML('beforeEnd',"  <tr id="+a+"><td><b>Homework "+a+"</b></td><td><div style='visibility: hidden'>w</div></td><td>Subjects:</td><td><input type = 'text' size = '5' id = '"+"h"+"subject"+a+"'></td><td>Due Date:</td><td><input type = 'date' size ='4' id = '"+"h"+"date"+a+"'></td></tr><tr id="+a+"n"+"><td></td><td></td><td>Notes:</td><th colspan='4'><textarea rows = '4' cols = '30' id = '"+"h"+"notes"+a+"' style='width: 100%;'></textarea></th></tr>");
 
-function removetable(){
-  var homework = localStorage["homework"].split("|*splitwhole*|");
-  
-  for(var num=1; num <= parseInt(homework[0]); num += 1){
-     var elem = document.getElementById(num);
-        elem.parentNode.removeChild(elem);
-         var eleme = document.getElementById(num+"n");
-        eleme.parentNode.removeChild(eleme);
-  }
 }
-
-function load(){
-  var fieldposition = [1,3,5];
-  var fields = ["notes","date","subject"];
-  var homework = localStorage["homework"].split("|*splitwhole*|");
-  var read = homework[1].split("|*splitday*|");
-  console.log(read);
-   for(var n = 1; n < parseInt(homework[0])+1; n += 1){
-     var temp = read[n-1];
-     temp = temp.split("|*split*|");
-    for(var i =0; i <= 2 ; i += 1){
-     document.getElementById("h"+fields[i]+n).value = temp[fieldposition[i]];
-    }
-  }
-}  
-load(); 
-function save(){
-  
-  //saves fields
-    var fieldposition = [1,3,5];
-  var fields = ["notes","date","subject"];
-  var homework = localStorage["homework"].split("|*splitwhole*|");
-  var read = homework[1].split("|*splitday*|");
-   for(var n = 1; n < parseInt(homework[0])+1; n += 1){
-     var temp = read[n-1];
-     temp = temp.split("|*split|");
-     
-    for(var i =0; i <= 2 ; i += 1){
-      console.log(fields[i]+n);
-     temp[fieldposition[i]] = document.getElementById("h"+fields[i]+n).value; 
-    }
-     temp = temp.join("|*split*|");
-    read[n-1] = temp;
-  }
-  homework[1] = read.join("|*splitday*|");
-    homework = homework.join("|*splitwhole*|");
-  localStorage["homework"] = homework;
-  
-}
-
   document.getElementById("add").addEventListener("click",function(){
-      var homework = localStorage["homework"].split("|*splitwhole*|");
-    if(homework[0] < 10){
-    removetable();
-    homework[0] = parseInt(homework[0]) + 1;
-    localStorage["homework"] = homework.join("|*splitwhole*|");
-    createtable();
-    load();
-    //document.getElementById("table").insertAdjacentHTML('beforeEnd',"  <tr id="+homework[0]+"><td><b>Homework "+homework[0]+"</b></td><td><div style='visibility: hidden'>w</div></td><td>Subjects:</td><td><input type = 'text' size = '5' id = '"+"h"+"subject"+localStorage["homeworkcounter"]+"'></td><td>Due Date:</td><td><input type = 'date' size ='4' id = '"+"h"+"date"+localStorage["homeworkcounter"]+"'></td></tr><tr id="+localStorage["homeworkcounter"]+"n"+"><td></td><td></td><td>Notes:</td><th colspan='4'><textarea rows = '4' cols = '30' id = '"+"h"+"notes"+localStorage["homeworkcounter"]+"' style='width: 100%;'></textarea></th></tr>");
+    if(localStorage["homeworkcounter"] < 10)
+    {
+    localStorage["homeworkcounter"] = parseInt(localStorage["homeworkcounter"]) + 1;
+    
+    document.getElementById("table").insertAdjacentHTML('beforeEnd',"  <tr id="+localStorage["homeworkcounter"]+"><td><b>Homework "+localStorage["homeworkcounter"]+"</b></td><td><div style='visibility: hidden'>w</div></td><td>Subjects:</td><td><input type = 'text' size = '5' id = '"+"h"+"subject"+localStorage["homeworkcounter"]+"'></td><td>Due Date:</td><td><input type = 'date' size ='4' id = '"+"h"+"date"+localStorage["homeworkcounter"]+"'></td></tr><tr id="+localStorage["homeworkcounter"]+"n"+"><td></td><td></td><td>Notes:</td><th colspan='4'><textarea rows = '4' cols = '30' id = '"+"h"+"notes"+localStorage["homeworkcounter"]+"' style='width: 100%;'></textarea></th></tr>");
     }
-    else{
+    else
+    {
       confirm("You have reached the maxium number of homeworks.");
     }
-  
   });
+   var fields = ["subject","notes","date"];
   //saves all current information on the event listener change.
   document.getElementById("whole").addEventListener("change",function()
  {
-   save();
+   
+   for(var e = 0; e <= 2; e = e + 1)
+   {
+    for(var f =1; f <= localStorage["homeworkcounter"]; f = f + 1)
+    {
+     
+       localStorage["h"+fields[e]+f] = document.getElementById("h"+fields[e]+f).value;
+          }
+   }
  });
+  //loads all the information
  
+   for(var g = 0; g <= 2; g = g + 1)
+   {
+    for(var h =1; h <= localStorage["homeworkcounter"]; h = h + 1)
+    {
+      document.getElementById("h"+fields[g]+h).value =  localStorage["h"+fields[g]+h];
+    }
+   }
      //remove the last element unless there is only one element
     document.getElementById("remove").addEventListener("click",function()
     {
-         var homework = localStorage["homework"].split("|*splitwhole*|");
-    if(homework[0] > 1){
-    if(confirm("Do you want to delete the last homework?")){
-    removetable();
-    homework[0] = parseInt(homework[0]) - 1;
-    localStorage["homework"] = homework.join("|*splitwhole*|");
-    createtable();
-    load();
-    //document.getElementById("table").insertAdjacentHTML('beforeEnd',"  <tr id="+homework[0]+"><td><b>Homework "+homework[0]+"</b></td><td><div style='visibility: hidden'>w</div></td><td>Subjects:</td><td><input type = 'text' size = '5' id = '"+"h"+"subject"+localStorage["homeworkcounter"]+"'></td><td>Due Date:</td><td><input type = 'date' size ='4' id = '"+"h"+"date"+localStorage["homeworkcounter"]+"'></td></tr><tr id="+localStorage["homeworkcounter"]+"n"+"><td></td><td></td><td>Notes:</td><th colspan='4'><textarea rows = '4' cols = '30' id = '"+"h"+"notes"+localStorage["homeworkcounter"]+"' style='width: 100%;'></textarea></th></tr>");
-    }
-    }
-    else{
-      confirm("You cannot remove the last homework. Remove the fields to remove notification");
-    }
-         
-      
+      if(parseInt(localStorage["homeworkcounter"]) > 1)
+      {
+        var elem = document.getElementById(localStorage["homeworkcounter"]);
+        elem.parentNode.removeChild(elem);
+         var eleme = document.getElementById(localStorage["homeworkcounter"]+"n");
+        eleme.parentNode.removeChild(eleme);
+        for(var j = 0; j <= 2; j = j + 1)
+         {
+           
+         localStorage[fields[j]+localStorage["assignmentcounter"]] = "";
+          }
+        localStorage["homeworkcounter"] = localStorage["homeworkcounter"] - 1;
+      }
     });  
    //required
   //html id="whole"

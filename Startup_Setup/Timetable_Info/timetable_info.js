@@ -87,7 +87,19 @@ document.addEventListener('DOMContentLoaded', function ()
   function displayperiods()
   {
     document.getElementById("periods").value = parseInt(localStorage["periods"]); 
+	
   }
+  
+  function updateboxes(){
+	  
+	  for(var a =0; a <= timeline.length; a += 1){
+    if(timeline[a] === document.getElementById("dropdown").value){
+      checking(dayselection[a]);
+    }
+   }
+  }
+  
+  
   //display menus
   dropdowndisplay();
   displayperiods();
@@ -137,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function ()
     variableupdate();
     dropdowndisplay();
     displayperiods();
+	updateboxes();
   });
   document.getElementById("6day").addEventListener("click",function(){
     localStorage["timeline"] = ["Day 1","Day 2","Day 3","Day 4","Day 5","Day 6"];
@@ -146,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function ()
     variableupdate();
     dropdowndisplay();
     displayperiods();
+	updateboxes();
   });
   document.getElementById("nochange").addEventListener("click",function(){
     localStorage["timeline"] = ["Week"];
@@ -155,6 +169,7 @@ document.addEventListener('DOMContentLoaded', function ()
     variableupdate();
     dropdowndisplay();
     displayperiods();
+	updateboxes();
   });
   
 
@@ -260,7 +275,9 @@ document.addEventListener('DOMContentLoaded', function ()
   //button "back" 
   //instruction: sends to previous page "theme info"  
   document.getElementById("back").addEventListener("click",function(){
-    window.location.replace("../Theme_Info/theme_info.html");
+	  //removed theme
+	  window.location.replace("../Basic_Info/basic_info.html");
+    //window.location.replace("../Theme_Info/theme_info.html");
   });
       //if adjustments are made the buttons are either removed or changed
   if(localStorage["adjustments"] === "true")

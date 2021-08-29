@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function()
   //instructions: sends user to the sync page
   document.getElementById("sync").addEventListener("click",function()
   {
-    alert("Syncing is still in development and will be functionable in the next update");
+    
       window.location.replace("../Sync/sync.html");
   });
   //button "subject"

@@ -48,7 +48,7 @@ var caculated = Math.round(100/20);
     //*/
      
   }
-    timeleft();
+    //timeleft();
     /*
   chrome.notifications.create("schoolbellremindernotification1",{
   type: "progress",

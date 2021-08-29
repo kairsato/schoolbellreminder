@@ -162,37 +162,64 @@ if(localStorage["status"] === undefined)
  
  
    //homework
-   function homeworkdisplay(){
-      var homework = localStorage["homework"].split("|*splitwhole*|");
-      var read = homework[1].split("|*splitday*|");
-      var keeptrack = [];
-      var temp = "";
-      //read = read.split("|*split*|");
-      for(var i = 0;i <= 9; i += 1){
-        temp = read[i].split("|*split*|");
-        if(temp[3] !== "" && temp[3] !== undefined && temp[3] !== "undefined"){
-        keeptrack.push(daycaculate(temp[3]));
-        }
+   var field = ["subject","notes","date"];
+  var detectedhomework = false;
+  var ran2 = 1;
+  for(var f =1; f <= localStorage["homeworkcounter"]; f = f + 1)
+   {
+    for(var e = 0; e <= 2; e = e + 1)
+    {
+      
+      
+      if(localStorage["h"+field[e]+ f] === "" || localStorage["h"+field[e]+ f] === "undefined")
+      {
+         if(ran2 === h)
+          {
+            ran2 += 1;
+          }
       }
-      keeptrack = keeptrack.sort();
-      console.log(keeptrack);
-      
+      else
+      {
+        
+         detectedhomework = true;
+          if(ran2 === f)
+          {
+          document.getElementById("addhomework").insertAdjacentHTML('afterbegin','<tr id='+"h"+f+'><td id='+"h"+"s"+f+'></td><td id='+"h"+"n"+f+'></td><td id='+"h"+"d"+f+'></td></tr>');
+          ran2 = ran2 + 1;
+          }
+          if(e === 2)
+          {
+          document.getElementById("h"+"d"+f).insertAdjacentHTML('afterbegin',daycaculate(localStorage["h"+field[2]+ f]));
+          }
+          if(e === 1)
+          {
+            
+          document.getElementById("h"+"n"+f).insertAdjacentHTML('afterbegin',lengthover(localStorage["h"+field[1]+ f],16));
+          }
+          if(e === 0)
+          {
+           
+            document.getElementById("h"+"s"+f).insertAdjacentHTML('afterbegin',lengthover(localStorage["h"+field[0]+ f],13));
+          }
+          
+          
+          
+         
+          
+      }
      
-     
-     //Objects
-     //order by date
-     // display homework with input
-     var day;
-     var dates = [];
-     for(var index in read){
-       day = read[index].split("|*split*|");
-
-      
-       
-     }
-  
+    }
    }
-   homeworkdisplay();
+   //print no assignments detected :D
+   if(detectedhomework)
+   {
+        document.getElementById("addhomework").insertAdjacentHTML('afterbegin','<tr><td class="title2""colspan="1">'+"<u>"+'Subject'+"</u>"+'</td><td class="title2" colspan="1">'+"<u>"+'Notes'+"</u>"+'</td><td class="title2" colspan="1">'+"<u>"+'Days Left'+"</u>"+'</td></tr>');
+   }
+   else
+   {
+     //no assignments
+      document.getElementById("addhomework").insertAdjacentHTML('afterbegin','<tr><td style="font-size: 17px;"colspan="3">No Homework Detected :)</td></tr>');
+   }
    
    //assignment
   var fields = ["subject","notes","date"];
@@ -554,7 +581,9 @@ function timeleft(period){
     temp = time[item].split(".");
     for(certainday in days){
       if(days[temp[1]] === localStorage["today"]){
+        
         if(parseInt(temp[0]) === parseInt(period)){
+          
           result = temp;
         }
       }
@@ -562,73 +591,79 @@ function timeleft(period){
   }
   
   time = result;
-   if(time[3] !== ""){
-     if(time[3] !== undefined){
-  time = time[3];
- //if the hour is equal to that of the current time
-  if(parseInt(time.substring(0,2)) === parseInt(currenttime.substring(0,2))){
-    output += "00";
-   output += ":";
-   if(parseInt(time.substring(3,5) - currenttime.substring(3,5)) < 10){
-    output += "0" + (parseInt(time.substring(3,5)) - parseInt(currenttime.substring(3,5) - 1));
-  }else{
-    output += parseInt(time.substring(3,5) - currenttime.substring(3,5) - 1);
-  }
 
-   }else{
-     //difference is 1hr and  50 minutes
-     //13:30 -15:20
-     //find the amount of minutes
-     
-     //30 + 20 = 50
-     // 15 -13 - 1 = 1
-     
-     //13:00
-     //15:20
-     
-     //60 + 20 = 80 upgrate to 1hr
-     //15-13-1 = 1
-     
-     //2hr and 20 minutes
-     var minutes = -1;
-     var hour = 0;
-     
-     minutes += 60 - parseInt(currenttime.substring(3,5));
-     minutes += parseInt(time.substring(3,5));
-     
-     hour += parseInt(time.substring(0,2) - currenttime.substring(0,2) - 1);
-     
-     if(minutes >= 60){
-       hour += 1;
-       minutes -= 60;
-     }
+
+ 
     
-      if(parseInt(hour) < 10){
-    output += "0" + hour;
-  }else{
-    output += hour;
-  }
-  output += ":";
-   if(parseInt(minutes) <  10){
-    output += "0" + minutes;
-  }else{
-    output += minutes;
-    
-  }
-  
-   }
- //hour
-  output += ":";
-  //second
-  if(60 - parseInt(currenttime.substring(6,8)) < 10){
-    output += "0" + parseInt(60 - currenttime.substring(6,8));
-  }else{
-     output += parseInt(60 - currenttime.substring(6,8));
-  }
-  return output;
-  }}else{
-  return "00:00:00";
-  }
+   if(time !== undefined){
+		 if(time[3] !== "" && time[3] !== undefined){
+	  time = time[3];
+	 //if the hour is equal to that of the current time
+	  if(parseInt(time.substring(0,2)) === parseInt(currenttime.substring(0,2))){
+		output += "00";
+	   output += ":";
+	   if(parseInt(time.substring(3,5) - currenttime.substring(3,5)) < 10){
+		output += "0" + (parseInt(time.substring(3,5)) - parseInt(currenttime.substring(3,5) - 1));
+	  }else{
+		output += parseInt(time.substring(3,5) - currenttime.substring(3,5) - 1);
+	  }
+
+	   }else{
+		 //difference is 1hr and  50 minutes
+		 //13:30 -15:20
+		 //find the amount of minutes
+		 
+		 //30 + 20 = 50
+		 // 15 -13 - 1 = 1
+		 
+		 //13:00
+		 //15:20
+		 
+		 //60 + 20 = 80 upgrate to 1hr
+		 //15-13-1 = 1
+		 
+		 //2hr and 20 minutes
+		 var minutes = -1;
+		 var hour = 0;
+		 
+		 minutes += 60 - parseInt(currenttime.substring(3,5));
+		 minutes += parseInt(time.substring(3,5));
+		 
+		 hour += parseInt(time.substring(0,2) - currenttime.substring(0,2) - 1);
+		 
+		 if(minutes >= 60){
+		   hour += 1;
+		   minutes -= 60;
+		 }
+		
+		  if(parseInt(hour) < 10){
+		output += "0" + hour;
+	  }else{
+		output += hour;
+	  }
+	  output += ":";
+	   if(parseInt(minutes) <  10){
+		output += "0" + minutes;
+	  }else{
+		output += minutes;
+		
+	  }
+	  
+	   }
+	 //hour
+	  output += ":";
+	  //second
+	  if(60 - parseInt(currenttime.substring(6,8)) < 10){
+		output += "0" + parseInt(60 - currenttime.substring(6,8));
+	  }else{
+		 output += parseInt(60 - currenttime.substring(6,8));
+	  }
+	  return output;
+	  }
+	}else{
+	return "00:00:00";
+	}
+
 }
 
 
@@ -678,7 +713,7 @@ function infograb(){
     
   document.getElementById("t3s").innerHTML = "Subject: " + temp[2];
   document.getElementById("t3r").innerHTML = "Room: " + temp[3];
-  document.getElementById("t3t").innerHTML = "Timeleft: " + timeleft(currentperiod + 2);
+  document.getElementById("t3t").innerHTML = "Timeleft: " + timeleft(currentperiod);
      
   }else{
 

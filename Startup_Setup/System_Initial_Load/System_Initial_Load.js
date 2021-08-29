@@ -11,11 +11,7 @@ document.addEventListener('DOMContentLoaded', function ()
     localStorage["adjustments"] = "true";
     window.location.replace("../Basic_Info/basic_info.html");
   });  
-  document.getElementById("theme").addEventListener("click",function()
-  {
-    localStorage["adjustments"] = "true";
-    window.location.replace("../Theme_Info/theme_info.html");
-  });  
+ 
   document.getElementById("timetable").addEventListener("click",function()
   {
     localStorage["adjustments"] = "true";
@@ -42,8 +38,7 @@ document.addEventListener('DOMContentLoaded', function ()
  document.getElementById("lastname").innerHTML = "Last Name: "+ localStorage["lastname"];
  document.getElementById("schoolname").innerHTML = "School Name: "+ localStorage["schoolname"];
  
- document.getElementById("colour").style.background = localStorage["color"];
- document.getElementById("themestyle").innerHTML = "Theme Style: "+ localStorage["style"];
+ 
  
  document.getElementById("timetablenames").innerHTML = "Timelines: "+ localStorage["timeline"];
  document.getElementById("periods").innerHTML = "Periods: "+ localStorage["periods"];

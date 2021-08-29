@@ -85,7 +85,9 @@ jQuery(window).load(function() {
   //instruction: sends to next page "Theme info" + Force save + Checks required fields filled
   document.getElementById("next").addEventListener("click",function(){
     //goes through each input to check whether its filled
-    for(var a = 0; a <= 2; a = a + 1)
+	
+	//Updated: changed loop to not include the school name for required info
+    for(var a = 0; a <= 1; a = a + 1)
   {
     var element = document.getElementById("c"+input[a]);
     //if the input is not filled
@@ -124,7 +126,9 @@ jQuery(window).load(function() {
     }
     else
     {
-    window.location.replace("../Theme_Info/theme_info.html");
+		window.location.replace("../Timetable_Info/timetable_info.html");
+		//decided to remove theme setting in setup.
+    //window.location.replace("../Theme_Info/theme_info.html");
     }
   }
   //Presents an alert stating missing fields and reset the process of checking

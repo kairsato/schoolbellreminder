@@ -4,7 +4,10 @@ html
   width:388px;
   height:150px;
 }
+body{
 
+  height: 180px;
+}
 .button
 {
   width:150px;
