@@ -83,8 +83,8 @@
     localStorage["homework"] = output;
   }
 if(localStorage["initial_load"] === undefined || localStorage["initial_load"] === "undefined" || localStorage["initial_load"] === ""){
-   initialloadsubjects();
-   initialloadbelltimes();
+   //initialloadsubjects();
+   //initialloadbelltimes();
    initialloadquickactions();
    initialhomework();
    localStorage["initial_load"] = "Loaded!!!";

@@ -1,3 +1,74 @@
+function initialloadsubjects(){
+
+  localStorage["subjectsinfo"]  = "";
+
+  var item;
+  var dayselection = localStorage["dayselection"].split(",");
+  var timeline = localStorage["timeline"].split(",");
+  var split;
+  //var subjects = localStorage["subjects"].split(",");
+  var periods = parseInt(localStorage["periods"]);
+  var saved = "";
+  
+ 
+  for(item in timeline){
+    
+    if(item === "0"){
+       saved = timeline[0]+"|";
+       split = dayselection[item].split(".");
+    }else{
+      saved += "|"+ timeline[item]+"|";
+    }
+     for(var a = 1; a<= periods; a+= 1){
+        for(var i =0; i <= 6 ; i += 1){
+          if(split[i] === "True"){
+              saved += a + "." + i+".."+ "/";
+          }
+        }
+      }
+  }
+  localStorage["subjectsinfo"] = saved;
+  
+}
+ function initialloadbelltimes(){
+  localStorage["belltimes"] = "";
+
+  var item;
+  var dayselection = localStorage["dayselection"].split(",");
+  var timeline = localStorage["timeline"].split(",");
+  var split;
+  var periods = parseInt(localStorage["periods"]);
+  var saved = "";
+  
+  
+  for(item in timeline){
+    
+    if(item === "0"){
+       saved = timeline[0]+"|";
+       split = dayselection[item].split(".");
+    }else{
+      saved += "|"+ timeline[item]+"|";
+    }
+     for(var a = 1; a<= periods; a+= 1){
+    for(var i =0; i <= 6 ; i += 1){
+   if(split[i] === "True"){
+      saved += a + "." + i+"."+"."+"/";
+   }}}
+  }
+  localStorage["belltimes"] = saved;
+  
+}
+function initialloadquickactions(){
+ var item;
+ var subject = localStorage["subjects"].split(",");
+ var output = "";
+ for(item in subject){
+   output += subject[item]+"|*split*|"+"0"+"|*split*||*split*||*split*||*split*||*split*||*split*||*split*||*split*||*split*||*split*||*splitwhole*|";  
+   
+ }
+ localStorage["quickaction"] = output;
+}
+
 //Copyright 2016, Kai Sato, All rights reserved.
 document.addEventListener('DOMContentLoaded', function () 
 {
@@ -191,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function ()
     else{
       if(contents.length >= 1){
         timeline.push(contents);
-        dayselection.push("False.False.False.False.False.False.False");
+        dayselection.push("True.True.True.True.True.False.False");
         localStorage["dayselection"] = dayselection;
         localStorage["timeline"] = timeline;
         //adds elements towards the drop down menu
@@ -209,6 +280,7 @@ document.addEventListener('DOMContentLoaded', function ()
   document.getElementById("remove").addEventListener("click",function(){
     var contents = document.getElementById("name").value;
     var flag = false;
+    var exists = false;
     var item = "";
     var position = 0;
     for(item in timeline){
@@ -217,11 +289,11 @@ document.addEventListener('DOMContentLoaded', function ()
         position = item;
       }
     }
-    if(flag || timeline.length > 1){
+    if(flag && timeline.length > 1){
       if(timeline.length <= 1){
         confirm("You cannot delete the last timeline");
       }
-      else{
+      else{        
         if(confirm("Are you sure you want to delete the timeline?")){
           var x = document.getElementById(contents);
           x.remove(x.selectedIndex);
@@ -264,10 +336,16 @@ document.addEventListener('DOMContentLoaded', function ()
       if(localStorage["adjustments"] === "true")
     {
        localStorage["adjustments"] = "false";
+
+       initialloadsubjects();
+       initialloadbelltimes();
+
        window.location.replace("../System_Initial_Load/System_Initial_Load.html");
     }
     else
     {
+      initialloadsubjects();
+      initialloadbelltimes();
       window.location.replace("../Subject_Info/subject_info.html");
     }
   });

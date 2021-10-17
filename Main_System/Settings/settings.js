@@ -27,8 +27,11 @@ document.addEventListener('DOMContentLoaded', function ()
 
 
   document.getElementById("edit").addEventListener("click",function(){
-      
-    window.location.replace("../../Startup_Setup/System_Initial_Load/System_Initial_Load.html");
+    if (confirm("If you decide to edit timetable system it will reset your saved belltimes and subjects")) {
+      window.location.replace("../../Startup_Setup/System_Initial_Load/System_Initial_Load.html");
+
+    }
+    
   });
 
 
